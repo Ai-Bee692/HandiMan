@@ -1,0 +1,1422 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HandiMate — Trusted Home Services in Ogba & Ojodu, Lagos</title>
+    <meta
+      name="description"
+      content="Book verified plumbers, electricians, solar engineers, AC techs, painters, carpenters and cleaners in Ogba & Ojodu, Lagos. Fast, local, dependable."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700&display=swap"
+    />
+    <style>
+      /* ============ TOKENS ============ */
+      :root {
+        --bg: #faf8f3;
+        --surface: #f3efe6;
+        --card: #ffffff;
+        --ink: #141a2e;
+        --ink-2: #3a4256;
+        --muted: #6b7280;
+        --border: #e8e3d7;
+        --primary: #141a2e;
+        --primary-foreground: #faf8f3;
+        --accent: #e89b3c;
+        --accent-2: #d97a2b;
+        --accent-soft: #fbead1;
+        --star: #f5b544;
+        --radius: 16px;
+        --radius-lg: 24px;
+        --radius-xl: 32px;
+        --shadow-sm: 0 4px 14px -6px rgba(20, 26, 46, 0.12);
+        --shadow-md: 0 14px 40px -18px rgba(20, 26, 46, 0.28);
+        --shadow-lg: 0 30px 70px -30px rgba(20, 26, 46, 0.4);
+        --font-display: "Fraunces", ui-serif, Georgia, serif;
+        --font-sans:
+          "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+      }
+
+      /* ============ RESET ============ */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: var(--font-sans);
+        color: var(--ink);
+        background: var(--bg);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      button {
+        font: inherit;
+        cursor: pointer;
+        background: none;
+        border: none;
+        color: inherit;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: var(--font-display);
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+      }
+      .container {
+        width: 100%;
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+      section {
+        scroll-margin-top: 80px;
+      }
+
+      /* ============ HEADER ============ */
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        transition:
+          background 0.3s ease,
+          backdrop-filter 0.3s ease,
+          border-color 0.3s ease;
+        border-bottom: 1px solid transparent;
+      }
+      .header.scrolled {
+        background: rgba(250, 248, 243, 0.82);
+        backdrop-filter: saturate(180%) blur(16px);
+        -webkit-backdrop-filter: saturate(180%) blur(16px);
+        border-bottom-color: var(--border);
+      }
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 72px;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+      }
+      .logo-mark {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        background: var(--primary);
+        color: var(--primary-foreground);
+        display: grid;
+        place-items: center;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.02em;
+        box-shadow: var(--shadow-sm);
+      }
+      .logo-text {
+        font-family: var(--font-display);
+        font-size: 1.35rem;
+        font-weight: 700;
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 36px;
+      }
+      .nav a {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--ink-2);
+        transition: color 0.2s;
+      }
+      .nav a:hover {
+        color: var(--ink);
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 22px;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition:
+          transform 0.2s ease,
+          background 0.2s ease,
+          box-shadow 0.2s ease,
+          opacity 0.2s;
+        white-space: nowrap;
+      }
+      .btn-primary {
+        background: var(--ink);
+        color: var(--primary-foreground);
+      }
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+      }
+      .btn-outline {
+        background: var(--card);
+        color: var(--ink);
+        border: 1px solid var(--border);
+      }
+      .btn-outline:hover {
+        background: var(--surface);
+      }
+      .btn-accent {
+        background: var(--accent);
+        color: #3a2408;
+      }
+      .btn-accent:hover {
+        opacity: 0.92;
+        transform: translateY(-2px);
+      }
+      .btn-lg {
+        padding: 16px 28px;
+        font-size: 0.95rem;
+      }
+      .btn .arrow {
+        transition: transform 0.2s;
+      }
+      .btn:hover .arrow {
+        transform: translateX(4px);
+      }
+      .hamburger {
+        display: none;
+        width: 40px;
+        height: 40px;
+        place-items: center;
+      }
+      .hamburger span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: var(--ink);
+        margin: 4px 0;
+        transition: 0.3s;
+      }
+      .hamburger.active span:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+      }
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+      .hamburger.active span:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
+      }
+
+      /* ============ HERO ============ */
+      .hero {
+        position: relative;
+        overflow: hidden;
+        padding: 140px 0 100px;
+        background:
+          radial-gradient(
+            1200px 600px at 85% 10%,
+            rgba(232, 155, 60, 0.22),
+            transparent 60%
+          ),
+          radial-gradient(
+            900px 500px at 10% 90%,
+            rgba(20, 26, 46, 0.08),
+            transparent 60%
+          ),
+          linear-gradient(180deg, var(--bg), var(--surface));
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 1fr;
+        gap: 64px;
+        align-items: center;
+      }
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 16px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.6);
+        border: 1px solid var(--border);
+        backdrop-filter: blur(6px);
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: var(--ink-2);
+      }
+      .badge .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--accent);
+        animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.4;
+        }
+      }
+      .hero h1 {
+        font-size: clamp(2.5rem, 6vw, 4.8rem);
+        margin-top: 24px;
+        font-weight: 600;
+      }
+      .hero h1 .italic {
+        font-style: italic;
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .hero p.lead {
+        margin-top: 24px;
+        max-width: 520px;
+        color: var(--muted);
+        font-size: 1.1rem;
+      }
+      .hero-actions {
+        margin-top: 36px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+      .perks {
+        margin-top: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px 32px;
+      }
+      .perk {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.88rem;
+        color: var(--muted);
+      }
+      .perk svg {
+        width: 16px;
+        height: 16px;
+        color: var(--accent-2);
+      }
+      .perk strong {
+        color: var(--ink);
+        font-weight: 600;
+      }
+
+      /* Hero image */
+      .hero-visual {
+        position: relative;
+      }
+      .hero-photo {
+        position: relative;
+        aspect-ratio: 4/5;
+        border-radius: var(--radius-xl);
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
+        animation: float 7s ease-in-out infinite;
+        background: linear-gradient(160deg, #c98b4a, #6b3f22);
+      }
+      .hero-photo svg.illus {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+      .hero-photo::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(20, 26, 46, 0.4),
+          transparent 60%
+        );
+      }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-14px);
+        }
+      }
+      .review-card {
+        position: absolute;
+        left: -24px;
+        bottom: -24px;
+        background: var(--card);
+        padding: 16px 18px;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-md);
+        border: 1px solid var(--border);
+        max-width: 230px;
+      }
+      .stars {
+        display: flex;
+        gap: 2px;
+        color: var(--star);
+      }
+      .stars svg {
+        width: 14px;
+        height: 14px;
+        fill: currentColor;
+      }
+      .review-card p {
+        margin-top: 8px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        line-height: 1.4;
+      }
+      .review-card span {
+        margin-top: 4px;
+        font-size: 0.75rem;
+        color: var(--muted);
+        display: block;
+      }
+      .badge-247 {
+        position: absolute;
+        right: -16px;
+        top: 32px;
+        background: var(--ink);
+        color: var(--primary-foreground);
+        padding: 14px 20px;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-lg);
+      }
+      .badge-247 .num {
+        font-family: var(--font-display);
+        font-size: 2rem;
+        font-weight: 600;
+      }
+      .badge-247 .lbl {
+        font-size: 0.7rem;
+        opacity: 0.75;
+        margin-top: 2px;
+      }
+
+      /* ============ MARQUEE ============ */
+      .marquee {
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+        background: var(--surface);
+        padding: 20px 0;
+      }
+      .marquee-inner {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 12px 40px;
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+      }
+      .marquee-inner .sep {
+        color: var(--accent);
+      }
+
+      /* ============ SERVICES ============ */
+      .services {
+        padding: 120px 0;
+      }
+      .eyebrow {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--accent-2);
+      }
+      .section-head {
+        max-width: 640px;
+      }
+      .section-head h2 {
+        font-size: clamp(2rem, 4.2vw, 3.2rem);
+        margin-top: 12px;
+      }
+      .section-head p {
+        margin-top: 16px;
+        color: var(--muted);
+        font-size: 1.1rem;
+      }
+      .services-grid {
+        margin-top: 56px;
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      }
+      .service {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 28px;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease,
+          border-color 0.3s;
+        display: flex;
+        flex-direction: column;
+      }
+      .service:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-md);
+        border-color: rgba(20, 26, 46, 0.2);
+      }
+      .service .icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 14px;
+        background: var(--accent-soft);
+        color: var(--accent-2);
+        display: grid;
+        place-items: center;
+      }
+      .service .icon svg {
+        width: 26px;
+        height: 26px;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .service h3 {
+        margin-top: 22px;
+        font-size: 1.5rem;
+      }
+      .service p {
+        margin-top: 12px;
+        color: var(--muted);
+        font-size: 0.92rem;
+        flex: 1;
+      }
+      .service .link {
+        margin-top: 22px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.88rem;
+        font-weight: 600;
+        color: var(--ink);
+      }
+      .service .link svg {
+        width: 16px;
+        height: 16px;
+        transition: transform 0.2s;
+      }
+      .service:hover .link svg {
+        transform: translateX(4px);
+      }
+      /* featured card */
+      .service.featured {
+        background: var(--ink);
+        color: var(--primary-foreground);
+        border-color: var(--ink);
+        box-shadow: var(--shadow-lg);
+      }
+      .service.featured .icon {
+        background: var(--accent);
+        color: #3a2408;
+      }
+      .service.featured p {
+        color: rgba(250, 248, 243, 0.7);
+      }
+      .service.featured .link {
+        color: var(--accent);
+      }
+
+      /* ============ ABOUT ============ */
+      .about {
+        padding: 120px 0;
+        background: var(--surface);
+      }
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+        align-items: center;
+      }
+      .about-photo {
+        position: relative;
+        aspect-ratio: 5/6;
+        border-radius: var(--radius-xl);
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
+        background: linear-gradient(160deg, #2a3652, #141a2e);
+      }
+      .about-photo svg.illus {
+        width: 100%;
+        height: 100%;
+      }
+      .verified-card {
+        position: absolute;
+        bottom: -24px;
+        right: -24px;
+        max-width: 230px;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 18px;
+        box-shadow: var(--shadow-md);
+      }
+      .verified-card .lbl {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--accent-2);
+      }
+      .verified-card .lbl svg {
+        width: 14px;
+        height: 14px;
+      }
+      .verified-card p {
+        margin-top: 10px;
+        font-size: 0.85rem;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+      .about-content h2 {
+        font-size: clamp(2rem, 4vw, 3rem);
+        margin-top: 12px;
+      }
+      .about-content .body {
+        margin-top: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        color: var(--muted);
+      }
+      .stats {
+        margin-top: 44px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+      .stat {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 20px;
+      }
+      .stat .num {
+        font-family: var(--font-display);
+        font-size: 2.1rem;
+        font-weight: 600;
+        line-height: 1;
+      }
+      .stat .num .plus {
+        color: var(--accent);
+      }
+      .stat .lbl {
+        margin-top: 6px;
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      /* ============ CTA ============ */
+      .cta {
+        padding: 100px 0;
+      }
+      .cta-inner {
+        position: relative;
+        overflow: hidden;
+        background: var(--ink);
+        color: var(--primary-foreground);
+        border-radius: 40px;
+        padding: 80px 64px;
+        box-shadow: var(--shadow-lg);
+      }
+      .cta-inner::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        opacity: 0.5;
+        background: radial-gradient(
+          600px 300px at 85% 20%,
+          rgba(232, 155, 60, 0.45),
+          transparent 60%
+        );
+        pointer-events: none;
+      }
+      .cta-content {
+        position: relative;
+        max-width: 560px;
+      }
+      .cta h2 {
+        font-size: clamp(2rem, 4vw, 3rem);
+      }
+      .cta p {
+        margin-top: 16px;
+        color: rgba(250, 248, 243, 0.75);
+        font-size: 1.1rem;
+      }
+      .cta .btn {
+        margin-top: 32px;
+      }
+
+      /* ============ FOOTER ============ */
+      .footer {
+        background: var(--surface);
+        border-top: 1px solid var(--border);
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 40px;
+        padding: 64px 0;
+      }
+      .footer-brand p {
+        margin-top: 16px;
+        max-width: 360px;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+      .footer h4 {
+        font-family: var(--font-display);
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+      .footer ul {
+        list-style: none;
+        margin-top: 18px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .footer ul a,
+      .footer ul li {
+        color: var(--muted);
+        font-size: 0.9rem;
+        transition: color 0.2s;
+      }
+      .footer ul a:hover {
+        color: var(--ink);
+      }
+      .footer-bottom {
+        border-top: 1px solid var(--border);
+        padding: 22px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.8rem;
+        color: var(--muted);
+      }
+
+      /* ============ REVEAL ANIMATIONS ============ */
+      .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition:
+          opacity 0.8s ease,
+          transform 0.8s ease;
+      }
+      .reveal.in {
+        opacity: 1;
+        transform: none;
+      }
+
+      /* ============ RESPONSIVE ============ */
+      @media (max-width: 900px) {
+        .hero {
+          padding: 120px 0 80px;
+        }
+        .hero-grid,
+        .about-grid {
+          grid-template-columns: 1fr;
+          gap: 56px;
+        }
+        .hero-visual {
+          max-width: 420px;
+          margin: 0 auto;
+        }
+        .services,
+        .about,
+        .cta {
+          padding: 80px 0;
+        }
+        .cta-inner {
+          padding: 56px 32px;
+          border-radius: 28px;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 32px;
+        }
+        .nav {
+          display: none;
+        }
+        .nav.open {
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+          gap: 16px;
+          position: absolute;
+          top: 72px;
+          left: 0;
+          right: 0;
+          background: rgba(250, 248, 243, 0.98);
+          backdrop-filter: blur(14px);
+          padding: 20px 24px 28px;
+          border-bottom: 1px solid var(--border);
+        }
+        .nav.open a {
+          padding: 8px 0;
+        }
+        .hamburger {
+          display: grid;
+        }
+        .footer-bottom {
+          flex-direction: column;
+          gap: 8px;
+          text-align: center;
+        }
+      }
+      @media (max-width: 520px) {
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+        .stats {
+          grid-template-columns: 1fr 1fr;
+        }
+        .review-card {
+          left: -8px;
+          bottom: -16px;
+        }
+        .badge-247 {
+          right: -4px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ============ HEADER ============ -->
+    <header class="header" id="header">
+      <div class="container header-inner">
+        <a href="#home" class="logo">
+          <div class="logo-mark">HM</div>
+          <span class="logo-text">HandiMate</span>
+        </a>
+        <nav class="nav" id="nav">
+          <a href="#home">Home</a>
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#services" class="btn btn-primary"
+            >Get services
+            <svg
+              class="arrow"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M5 12h14M13 5l7 7-7 7" /></svg
+          ></a>
+        </nav>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ============ HERO ============ -->
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="badge"
+            ><span class="dot"></span> Serving Ogba, Ojodu & Ikeja</span
+          >
+          <h1>
+            Your trusted <span class="italic">home services</span> hub in Lagos.
+          </h1>
+          <p class="lead">
+            Verified plumbers, solar engineers, electricians, painters,
+            carpenters, cleaners and AC technicians — one dependable place for
+            every home fix.
+          </p>
+          <div class="hero-actions">
+            <a href="#services" class="btn btn-primary btn-lg"
+              >Browse services
+              <svg
+                class="arrow"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M5 12h14M13 5l7 7-7 7" />
+              </svg>
+            </a>
+            <a href="#about" class="btn btn-outline btn-lg">Learn more</a>
+          </div>
+          <div class="perks">
+            <div class="perk">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+              <strong>Verified pros</strong>
+            </div>
+            <div class="perk">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 6v6l4 2" />
+              </svg>
+              <strong>Fast response</strong>
+            </div>
+            <div class="perk">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              <strong>Truly local</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-photo">
+            <!-- Warm illustrated scene stands in for a hero photo -->
+            <svg
+              class="illus"
+              viewBox="0 0 400 500"
+              preserveAspectRatio="xMidYMid slice"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs>
+                <linearGradient id="sky" x1="0" x2="0" y1="0" y2="1">
+                  <stop offset="0" stop-color="#f4b978" />
+                  <stop offset="1" stop-color="#7a4324" />
+                </linearGradient>
+                <linearGradient id="body" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0" stop-color="#2b2f42" />
+                  <stop offset="1" stop-color="#1a1d2b" />
+                </linearGradient>
+              </defs>
+              <rect width="400" height="500" fill="url(#sky)" />
+              <rect
+                x="60"
+                y="80"
+                width="180"
+                height="240"
+                rx="10"
+                fill="#ffe6b8"
+                opacity=".6"
+              />
+              <rect
+                x="80"
+                y="100"
+                width="60"
+                height="220"
+                fill="#fff2c9"
+                opacity=".7"
+              />
+              <rect
+                x="160"
+                y="100"
+                width="60"
+                height="220"
+                fill="#fff2c9"
+                opacity=".7"
+              />
+              <!-- worker silhouette -->
+              <circle cx="180" cy="230" r="42" fill="#5a3a26" />
+              <path
+                d="M110 500 C 120 360 240 360 250 500 Z"
+                fill="url(#body)"
+              />
+              <rect x="150" y="270" width="100" height="60" fill="url(#body)" />
+              <!-- tool belt -->
+              <rect x="140" y="330" width="120" height="14" fill="#8b4a1e" />
+              <rect
+                x="248"
+                y="336"
+                width="18"
+                height="46"
+                rx="4"
+                fill="#c94a2a"
+              />
+              <!-- cable -->
+              <path
+                d="M220 280 C 260 300 300 260 320 300"
+                stroke="#e6b464"
+                stroke-width="4"
+                fill="none"
+                stroke-linecap="round"
+              />
+            </svg>
+          </div>
+          <div class="review-card">
+            <div class="stars">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2l3 7 7 .6-5.3 4.6L18.2 22 12 18l-6.2 4L7.3 14.2 2 9.6 9 9z"
+                />
+              </svg>
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2l3 7 7 .6-5.3 4.6L18.2 22 12 18l-6.2 4L7.3 14.2 2 9.6 9 9z"
+                />
+              </svg>
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2l3 7 7 .6-5.3 4.6L18.2 22 12 18l-6.2 4L7.3 14.2 2 9.6 9 9z"
+                />
+              </svg>
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2l3 7 7 .6-5.3 4.6L18.2 22 12 18l-6.2 4L7.3 14.2 2 9.6 9 9z"
+                />
+              </svg>
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2l3 7 7 .6-5.3 4.6L18.2 22 12 18l-6.2 4L7.3 14.2 2 9.6 9 9z"
+                />
+              </svg>
+            </div>
+            <p>"Fixed my inverter same day. Absolute lifesavers."</p>
+            <span>— Chiamaka, Ojodu</span>
+          </div>
+          <div class="badge-247">
+            <div class="num">24/7</div>
+            <div class="lbl">Emergency callouts</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee">
+      <div class="container marquee-inner">
+        <span>Plumbing</span><span class="sep">✦</span> <span>Solar</span
+        ><span class="sep">✦</span> <span>Electrical</span
+        ><span class="sep">✦</span> <span>AC</span><span class="sep">✦</span>
+        <span>Painting</span><span class="sep">✦</span> <span>Carpentry</span
+        ><span class="sep">✦</span>
+        <span>Cleaning</span>
+      </div>
+    </div>
+
+    <!-- ============ SERVICES ============ -->
+    <section id="services" class="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Services</span>
+          <h2>Every home fix, one dependable roster.</h2>
+          <p>
+            From emergency repairs to full installations — the right
+            professional, already vetted, already nearby.
+          </p>
+        </div>
+        <div class="services-grid" id="servicesGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="about">
+      <div class="container about-grid">
+        <div class="about-photo reveal">
+          <svg
+            class="illus"
+            viewBox="0 0 400 480"
+            preserveAspectRatio="xMidYMid slice"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <linearGradient id="bg2" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0" stop-color="#2b3552" />
+                <stop offset="1" stop-color="#101427" />
+              </linearGradient>
+            </defs>
+            <rect width="400" height="480" fill="url(#bg2)" />
+            <!-- three figures -->
+            <g fill="#e89b3c" opacity=".92">
+              <circle cx="110" cy="180" r="38" />
+              <path d="M50 480 C 60 320 160 320 170 480 Z" />
+            </g>
+            <g fill="#faf8f3" opacity=".9">
+              <circle cx="200" cy="160" r="42" />
+              <path d="M135 480 C 148 300 252 300 265 480 Z" />
+            </g>
+            <g fill="#d97a2b" opacity=".95">
+              <circle cx="295" cy="180" r="38" />
+              <path d="M230 480 C 240 320 340 320 350 480 Z" />
+            </g>
+            <!-- hard hat -->
+            <path
+              d="M270 165 Q295 138 320 165 L320 175 L270 175 Z"
+              fill="#f5c150"
+            />
+          </svg>
+          <div class="verified-card">
+            <div class="lbl">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="M9 12l2 2 4-4" />
+              </svg>
+              Verified
+            </div>
+            <p>
+              Every pro is ID-checked, trained, and continuously rated by
+              neighbors.
+            </p>
+          </div>
+        </div>
+
+        <div class="about-content reveal">
+          <span class="eyebrow">Why HandiMate</span>
+          <h2>Bridging the trust gap in Lagos home services.</h2>
+          <div class="body">
+            <p>
+              Residents in Ogba, Ojodu, and surrounding neighborhoods face a
+              persistent challenge: finding fast, verified, and professional
+              local tradespeople — especially in emergencies.
+            </p>
+            <p>
+              Existing platforms often list distant or unverified providers.
+              HandiMate connects you directly with trusted local professionals
+              who know your street and respond fast.
+            </p>
+          </div>
+          <div class="stats">
+            <div class="stat">
+              <div class="num" data-target="150" data-suffix="+">0</div>
+              <div class="lbl">Verified pros</div>
+            </div>
+            <div class="stat">
+              <div class="num" data-target="3200" data-suffix="+">0</div>
+              <div class="lbl">Jobs completed</div>
+            </div>
+            <div class="stat">
+              <div class="num" data-target="890" data-suffix="+">0</div>
+              <div class="lbl">Happy customers</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="cta">
+      <div class="container">
+        <div class="cta-inner reveal">
+          <div class="cta-content">
+            <h2>Need a pro today? We'll match you in minutes.</h2>
+            <p>
+              Tell us what's broken. A vetted local expert will call you back —
+              usually within the hour.
+            </p>
+            <a href="#services" class="btn btn-accent btn-lg"
+              >Request a pro
+              <svg
+                class="arrow"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M5 12h14M13 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="#home" class="logo">
+              <div class="logo-mark">HM</div>
+              <span class="logo-text">HandiMate</span>
+            </a>
+            <p>
+              The trusted local hub for home services in Ogba, Ojodu, and the
+              greater Ikeja area of Lagos.
+            </p>
+          </div>
+          <div>
+            <h4>Services</h4>
+            <ul>
+              <li><a href="#services">Plumbing</a></li>
+              <li><a href="#services">Solar</a></li>
+              <li><a href="#services">Electrical</a></li>
+              <li><a href="#services">Cleaning</a></li>
+              <li><a href="#services">AC repair</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Coverage</h4>
+            <ul>
+              <li>Ogba</li>
+              <li>Ojodu</li>
+              <li>Ikeja</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 HandiMate. All rights reserved.</p>
+          <p>Built for Lagos, with care.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ============ SVG ICON SPRITE ============ -->
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <defs>
+        <symbol id="i-wrench" viewBox="0 0 24 24">
+          <path
+            d="M14.7 6.3a4 4 0 0 0 5 5L21 13l-8 8a2.83 2.83 0 1 1-4-4l8-8-1.3-2.7z"
+          />
+        </symbol>
+        <symbol id="i-sun" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="4" />
+          <path
+            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+          />
+        </symbol>
+        <symbol id="i-sparkle" viewBox="0 0 24 24">
+          <path
+            d="M12 3l1.9 4.6L18.5 9l-4.6 1.9L12 15l-1.9-4.1L5.5 9l4.6-1.4L12 3z"
+          />
+          <path
+            d="M19 14l.9 2.1L22 17l-2.1.9L19 20l-.9-2.1L16 17l2.1-.9L19 14z"
+          />
+        </symbol>
+        <symbol id="i-wind" viewBox="0 0 24 24">
+          <path
+            d="M9.6 4.6A2 2 0 1 1 11 8H2M12.6 19.4A2 2 0 1 0 14 16H2M17.5 8a2.5 2.5 0 1 1 2 4H2"
+          />
+        </symbol>
+        <symbol id="i-roller" viewBox="0 0 24 24">
+          <rect x="3" y="4" width="14" height="6" rx="1" />
+          <path d="M17 7h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-9v3M10 21v-4" />
+        </symbol>
+        <symbol id="i-hammer" viewBox="0 0 24 24">
+          <path
+            d="M15 12l-8.5 8.5a1.5 1.5 0 0 1-2.1-2.1L13 10M17 6l5 5-3 3-5-5 3-3zM11 8l3-3 4 4-3 3"
+          />
+        </symbol>
+        <symbol id="i-zap" viewBox="0 0 24 24">
+          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+        </symbol>
+        <symbol id="i-arrow" viewBox="0 0 24 24">
+          <path d="M5 12h14M13 5l7 7-7 7" />
+        </symbol>
+      </defs>
+    </svg>
+
+    <script>
+      // ===== SERVICES DATA =====
+      const services = [
+        {
+          icon: "i-wrench",
+          title: "Plumbing",
+          desc: "24/7 emergency pipe repair, water systems, drains and fixture replacements.",
+          cta: "Book now",
+          featured: true,
+        },
+        {
+          icon: "i-sun",
+          title: "Solar Engineering",
+          desc: "Panel and inverter setup, monitoring, and maintenance to cut electricity bills.",
+          cta: "Get quote",
+        },
+        {
+          icon: "i-sparkle",
+          title: "Cleaning",
+          desc: "Deep cleans and routine care for homes and offices with pro-grade products.",
+          cta: "Book now",
+        },
+        {
+          icon: "i-wind",
+          title: "Air Conditioners",
+          desc: "AC servicing, repair, gas refill and installation — cool comfort year round.",
+          cta: "Get quote",
+        },
+        {
+          icon: "i-roller",
+          title: "Painters",
+          desc: "Interior, exterior, waterproofing and wall finishes with quality paints.",
+          cta: "Book now",
+        },
+        {
+          icon: "i-hammer",
+          title: "Carpenters",
+          desc: "Furniture, cabinetry, joinery, and repairs by skilled craftsmen.",
+          cta: "Get quote",
+        },
+        {
+          icon: "i-zap",
+          title: "Electricians",
+          desc: "Wiring, generator repair, switchboards, inspections — licensed and insured.",
+          cta: "Book now",
+        },
+      ];
+
+      const iconSvg = (id) =>
+        `<svg viewBox="0 0 24 24"><use href="#${id}"/></svg>`;
+
+      const grid = document.getElementById("servicesGrid");
+      grid.innerHTML = services
+        .map(
+          (s) => `
+    <a href="#services" class="service reveal ${s.featured ? "featured" : ""}">
+      <div class="icon">${iconSvg(s.icon)}</div>
+      <h3>${s.title}</h3>
+      <p>${s.desc}</p>
+      <span class="link">${s.cta}
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg>
+      </span>
+    </a>
+  `,
+        )
+        .join("");
+
+      // ===== HEADER SCROLL =====
+      const header = document.getElementById("header");
+      const onScroll = () =>
+        header.classList.toggle("scrolled", window.scrollY > 12);
+      onScroll();
+      window.addEventListener("scroll", onScroll, { passive: true });
+
+      // ===== MOBILE NAV =====
+      const hamburger = document.getElementById("hamburger");
+      const nav = document.getElementById("nav");
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        nav.classList.toggle("open");
+      });
+      nav.querySelectorAll("a").forEach((a) =>
+        a.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          nav.classList.remove("open");
+        }),
+      );
+
+      // ===== REVEAL ON SCROLL =====
+      const revealIo = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("in");
+              revealIo.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.15 },
+      );
+      document
+        .querySelectorAll(".reveal")
+        .forEach((el) => revealIo.observe(el));
+
+      // ===== ANIMATED STATS =====
+      const nums = document.querySelectorAll(".stat .num");
+      let statsDone = false;
+      const statsIo = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting && !statsDone) {
+              statsDone = true;
+              nums.forEach((el) => {
+                const target = +el.dataset.target;
+                const suffix = el.dataset.suffix || "";
+                const start = performance.now();
+                const dur = 1600;
+                const step = (t) => {
+                  const p = Math.min(1, (t - start) / dur);
+                  const eased = 1 - Math.pow(1 - p, 3);
+                  const v = Math.floor(eased * target);
+                  el.innerHTML =
+                    v.toLocaleString() + `<span class="plus">${suffix}</span>`;
+                  if (p < 1) requestAnimationFrame(step);
+                };
+                requestAnimationFrame(step);
+              });
+            }
+          });
+        },
+        { threshold: 0.3 },
+      );
+      const aboutSection = document.getElementById("about");
+      if (aboutSection) statsIo.observe(aboutSection);
+    </script>
+  </body>
+</html>
