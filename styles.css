@@ -632,7 +632,7 @@ padding: 100px 0;
 .cta-inner {
     position: relative;
     overflow: hidden;
-    background: url(./img/contact_us.jpg) no-repeat;
+    background: url(./img/contact_us.jpg) center no-repeat;
     color: var(--primary-foreground);
     border-radius: 40px;
     padding: 80px 64px;
@@ -782,7 +782,7 @@ transform: none;
     border-bottom: 1px solid var(--border);
 }
 .nav.open a {
-    padding: 8px 0;
+    padding: 8px 16px;
 }
 .hamburger {
     display: grid;
