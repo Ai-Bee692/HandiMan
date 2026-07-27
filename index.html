@@ -62,7 +62,7 @@
             Your trusted <span class="italic">home services</span> hub in Lagos.
           </h1>
           <p class="lead">
-            Verified plumbers, solar engineers, electricians, painters,
+            Verified plumbers, solar/inverter engineers, electricians, painters,
             carpenters, cleaners and AC technicians — one dependable place for
             every home fix.
           </p>
@@ -181,10 +181,11 @@
     <!-- ============ MARQUEE ============ -->
     <div class="marquee">
       <div class="container marquee-inner">
-        <span>Plumbing</span><span class="sep">✦</span> <span>Solar</span
-        ><span class="sep">✦</span> <span>Electrical</span
-        ><span class="sep">✦</span> <span>AC</span><span class="sep">✦</span>
-        <span>Painting</span><span class="sep">✦</span> <span>Carpentry</span
+        <span>Plumbing</span><span class="sep">✦</span>
+        <span> Solar/Inverter</span><span class="sep">✦</span>
+        <span>Electrical</span><span class="sep">✦</span> <span>AC</span
+        ><span class="sep">✦</span> <span>Painting</span
+        ><span class="sep">✦</span> <span>Carpentry</span
         ><span class="sep">✦</span>
         <span>Cleaning</span>
       </div>
@@ -294,7 +295,7 @@
             <h4>Services</h4>
             <ul>
               <li><a href="#services">Plumbing</a></li>
-              <li><a href="#services">Solar</a></li>
+              <li><a href="#services">Solar/Inverter</a></li>
               <li><a href="#services">Electrical</a></li>
               <li><a href="#services">Cleaning</a></li>
               <li><a href="#services">AC repair</a></li>
@@ -360,6 +361,88 @@
         </symbol>
       </defs>
     </svg>
+
+    <!-- ============ BOOKING MODAL ============ -->
+    <div class="modal-overlay" id="bookingModal">
+      <div class="modal-card">
+        <button class="modal-close" id="modalClose" aria-label="Close">
+          &times;
+        </button>
+        <h3 id="modalServiceName">Book a Service</h3>
+        <p class="modal-subtitle">
+          Fill in the details below and a verified local pro will reach out to
+          you shortly.
+        </p>
+        <form id="bookingForm">
+          <div class="form-group">
+            <label for="fullName"
+              >Full Name <span class="required">*</span></label
+            >
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              required
+              placeholder="Your full name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="phone"
+              >Phone Number <span class="required">*</span></label
+            >
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              required
+              placeholder="+234 XXX XXX XXXX"
+            />
+          </div>
+          <div class="form-group">
+            <label for="neighborhood"
+              >Neighborhood <span class="required">*</span></label
+            >
+            <select id="neighborhood" name="neighborhood" required>
+              <option value="">Select your area</option>
+              <option value="Ogba">Ogba</option>
+              <option value="Ojodu">Ojodu</option>
+              <option value="Ikeja">Ikeja</option>
+              <option value="not-listed">Not Listed</option>
+            </select>
+          </div>
+          <div class="form-group area-field" id="areaField">
+            <label for="otherArea">Area / Other Neighborhood</label>
+            <input
+              type="text"
+              id="otherArea"
+              name="otherArea"
+              placeholder="e.g., Ogba Phase 2, Ojodu Berge"
+            />
+          </div>
+          <div class="form-group">
+            <label for="serviceType">Service</label>
+            <input type="text" id="serviceType" name="serviceType" readonly />
+          </div>
+          <div class="form-group">
+            <label for="message">Message / Details</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              placeholder="Describe what you need..."
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-accent btn-lg">
+            Submit Booking
+          </button>
+        </form>
+        <div class="success-message" id="successMessage">
+          <div class="success-icon">&#10003;</div>
+          <h4>Request Submitted!</h4>
+          <p>A verified local pro will call you back within 10 mins.</p>
+        </div>
+      </div>
+    </div>
 
     <script src="index.js"></script>
   </body>
