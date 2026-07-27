@@ -71,6 +71,7 @@ const modalServiceName = document.getElementById("modalServiceName");
 const serviceTypeInput = document.getElementById("serviceType");
 const bookingForm = document.getElementById("bookingForm");
 const successMessage = document.getElementById("successMessage");
+const errorMessage = document.getElementById("errorMessage");
 const areaField = document.getElementById("areaField");
 const otherAreaInput = document.getElementById("otherArea");
 const neighborhoodSelect = document.getElementById("neighborhood");
@@ -86,6 +87,7 @@ function openModal(serviceName) {
   bookingForm.reset();
   serviceTypeInput.value = serviceName;
   successMessage.classList.remove("active");
+  errorMessage.classList.remove("active");
   bookingForm.style.display = "block";
   modal.classList.add("active");
   document.body.style.overflow = "hidden";
@@ -136,6 +138,11 @@ neighborhoodSelect.addEventListener("change", function () {
   }
 });
 
+// ===== EMAILJS CONFIG =====
+const EMAILJS_PUBLIC_KEY = "VUo6gDvlr44_37IWw";
+const EMAILJS_SERVICE_ID = "service_n6ml95g";
+const EMAILJS_TEMPLATE_ID = "template_9s9todf";
+
 // ===== FORM SUBMISSION =====
 bookingForm.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -147,9 +154,6 @@ bookingForm.addEventListener("submit", function (e) {
 
   if (neighborhood === "not-listed" && !otherAreaInput.value.trim()) return;
 
-  bookingForm.style.display = "none";
-  successMessage.classList.add("active");
-
   const formData = {
     service: serviceTypeInput.value,
     name: fullName,
@@ -158,10 +162,39 @@ bookingForm.addEventListener("submit", function (e) {
     otherArea: otherAreaInput.value.trim(),
     message: document.getElementById("message").value.trim(),
   };
-  console.log("Booking submitted:", formData);
+
+  bookingForm.style.display = "none";
+  successMessage.classList.add("active");
+
+  emailjs
+    .send(
+      EMAILJS_SERVICE_ID,
+      EMAILJS_TEMPLATE_ID,
+      {
+        from_name: formData.name,
+        phone: formData.phone,
+        neighborhood: formData.neighborhood,
+        other_area: formData.otherArea || "N/A",
+        service: formData.service,
+        message: formData.message,
+      },
+      EMAILJS_PUBLIC_KEY
+    )
+    .then(function () {
+      console.log("Booking email sent successfully");
+    })
+    .catch(function (error) {
+      console.error("Email send failed:", error);
+      bookingForm.style.display = "block";
+      successMessage.classList.remove("active");
+      errorMessage.classList.add("active");
+    });
 });
 
-// ===== HEADER SCROLL =====
+// ===== EMAILJS INIT =====
+(function () {
+  emailjs.init(EMAILJS_PUBLIC_KEY);
+})();
 const header = document.getElementById("header");
 const onScroll = () =>
   header.classList.toggle("scrolled", window.scrollY > 12);

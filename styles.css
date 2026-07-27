@@ -987,3 +987,31 @@ transform: none;
   color: var(--muted);
   font-size: 0.95rem;
 }
+.error-message {
+  display: none;
+  text-align: center;
+  padding: 32px 0;
+}
+.error-message.active {
+  display: block;
+}
+.error-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #fce4e4;
+  color: #c0392b;
+  font-size: 2rem;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 20px;
+}
+.error-message h4 {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+.error-message p {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
