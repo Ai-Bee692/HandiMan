@@ -4,6 +4,7 @@ const PHONE_NUMBER = "+2349047086673";
 // ===== SERVICES DATA =====
 const services = [
   {
+    id: "plumbing",
     icon: "i-wrench",
     title: "Plumbing",
     desc: "24/7 emergency pipe repair, water systems, drains and fixture replacements.",
@@ -11,36 +12,42 @@ const services = [
     featured: true,
   },
   {
+    id: "solar-inverter",
     icon: "i-sun",
     title: "Solar/Inverter Engineering",
     desc: "Panel and inverter setup, monitoring, and maintenance to cut electricity bills.",
     cta: "Book now",
   },
   {
+    id: "cleaning",
     icon: "i-sparkle",
     title: "Cleaning",
     desc: "Deep cleans and routine care for homes and offices with pro-grade products.",
     cta: "Book now",
   },
   {
+    id: "ac-repair",
     icon: "i-wind",
     title: "Air Conditioners",
     desc: "AC servicing, repair, gas refill and installation — cool comfort year round.",
     cta: "Book now",
   },
   {
+    id: "painting",
     icon: "i-roller",
     title: "Painters",
     desc: "Interior, exterior, waterproofing and wall finishes with quality paints.",
     cta: "Book now",
   },
   {
+    id: "carpentry",
     icon: "i-hammer",
     title: "Carpenters",
     desc: "Furniture, cabinetry, joinery, and repairs by skilled craftsmen.",
     cta: "Book now",
   },
   {
+    id: "electrical",
     icon: "i-zap",
     title: "Electricians",
     desc: "Wiring, generator repair, switchboards, inspections — licensed and insured.",
@@ -56,7 +63,7 @@ const grid = document.getElementById("servicesGrid");
 grid.innerHTML = services
   .map(
     (s) => `
-  <div class="service reveal ${s.featured ? "featured" : ""}" data-service="${s.title}">
+  <div class="service reveal ${s.featured ? "featured" : ""}" id="${s.id}" data-service="${s.title}">
     <div class="icon">${iconSvg(s.icon)}</div>
     <h3>${s.title}</h3>
     <p>${s.desc}</p>
