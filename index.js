@@ -222,7 +222,9 @@ nav.querySelectorAll("a").forEach((a) =>
 // ===== CALL ME BUTTON =====
 const callMeBtn = document.getElementById("callMeBtn");
 if (callMeBtn) {
-  callMeBtn.addEventListener("click", function () {
+  callMeBtn.href = "tel:" + PHONE_NUMBER;
+  callMeBtn.addEventListener("click", function (e) {
+    e.preventDefault();
     window.location.href = "tel:" + PHONE_NUMBER;
   });
 }
