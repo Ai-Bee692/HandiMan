@@ -1,3 +1,6 @@
+// ===== CONTACT =====
+const PHONE_NUMBER = "+2349047086673";
+
 // ===== SERVICES DATA =====
 const services = [
   {
@@ -195,7 +198,8 @@ bookingForm.addEventListener("submit", function (e) {
 (function () {
   emailjs.init(EMAILJS_PUBLIC_KEY);
 })();
-const header = document.getElementById("header");
+
+// ===== HEADER SCROLL =====
 const onScroll = () =>
   header.classList.toggle("scrolled", window.scrollY > 12);
 onScroll();
@@ -214,6 +218,14 @@ nav.querySelectorAll("a").forEach((a) =>
     nav.classList.remove("open");
   }),
 );
+
+// ===== CALL ME BUTTON =====
+const callMeBtn = document.getElementById("callMeBtn");
+if (callMeBtn) {
+  callMeBtn.addEventListener("click", function () {
+    window.location.href = "tel:" + PHONE_NUMBER;
+  });
+}
 
 // ===== REVEAL ON SCROLL =====
 const revealIo = new IntersectionObserver(
